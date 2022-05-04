@@ -1,0 +1,23 @@
+.dropdown-item.active, 
+.dropdown-item:active {
+  background-color: #14375c !important;
+}
+
+.add-btn {
+  background-color: #14375c;
+  color: #fff;
+}
+
+.add-btn:hover {
+  color: #fff;
+}
+
+.delete-btn {
+  background-color: #fff;
+  border: 2px solid #14375c;
+}
+
+.edit-btn {
+  border: none;
+  background-color: transparent;
+}

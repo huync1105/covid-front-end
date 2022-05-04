@@ -1,0 +1,45 @@
+#wrapper {
+  width: 100%;
+  height: 100vh;
+}
+
+.form-container {
+  width: 30%;
+  min-width: 400px;
+}
+
+.login {
+  width: 100%;
+  height: 100%;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 9px;
+  border-radius: 6px;
+  border: none;
+  background-color: #14375c;
+  color: #fff;
+}
+
+.login-btn:hover {
+  cursor: pointer;
+  background-color: #508dcf;
+  color: #14375c;
+}
+
+.validate {
+  border: 1px solid red !important;
+  color: red !important;
+}
+
+.password-invalid,
+.user-name-invalid {
+  color: red;
+  display: none;
+}
+
+.validate + .password-invalid,
+.validate + .user-name-invalid {
+  display: block!important;
+}
