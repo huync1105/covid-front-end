@@ -31,9 +31,9 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <a class="dropdown-item active" href="#">Quản lý thành viên</a>
+                <a class="dropdown-item" href="./administrators.html">Quản lý thành viên</a>
               </li>
-              <li><a class="dropdown-item" href="./posts.html">Quản lý bài viết</a></li>
+              <li><a class="dropdown-item active" href="#">Quản lý bài viết</a></li>
               <li>
                 <a class="dropdown-item" href="#">Quản lý chuyên mục</a>
               </li>
@@ -50,19 +50,18 @@
 
   <div class="wrapper">
     <div class="content p-3">
-      <h3 class="pb-2">Quản lý thành viên</h3>
+      <h3 class="pb-2">Quản lý bài viết</h3>
       <div class="mb-3 d-flex justify-content-between">
         <div class="d-flex">
           <button type="button" class="btn add-btn me-1" onclick="openModal()">
             Thêm
           </button>
-          <button type="button" class="btn delete-btn" onclick="removeUser()">
+          <button type="button" class="btn delete-btn" onclick="removePost()">
             Xóa
           </button>
         </div>
         <div class="input-group" style="width: 300px">
-          <input type="text" class="form-control" id="input-search" placeholder="Tìm kiếm tên tài khoản" aria-label="Username"
-            aria-describedby="basic-addon1" onkeyup="searchUser()">
+          <input type="text" class="form-control" id="input-search" placeholder="Tìm kiếm tiêu đề" aria-describedby="basic-addon1" onkeyup="searchPost()">
         </div>
       </div>
 
@@ -72,9 +71,7 @@
           <col style="width: 50px">
           <col>
           <col>
-          <col style="width: 150px">
-          <col>
-          <col style="width: 150px">
+          <col style="width: 250px">
           <col style="width: 50px">
         </colgroup>
         <thead>
@@ -83,11 +80,9 @@
               <!-- <input class="form-check-input" type="checkbox" value="" id="checkedAll"> -->
             </th>
             <th scope="col" style="text-align: center;">STT</th>
-            <th scope="col" style="text-align: center;">Tên tài khoản</th>
-            <th scope="col" style="text-align: center;">Email</th>
-            <th scope="col" style="text-align: center;">Ngày sinh</th>
-            <th scope="col" style="text-align: center;">Địa chỉ</th>
-            <th scope="col" style="text-align: center;">Số điện thoại</th>
+            <th scope="col" style="text-align: center;">Tiêu đề</th>
+            <th scope="col" style="text-align: center;">Mô tả</th>
+            <th scope="col" style="text-align: center;">Ngày tạo</th>
             <th scope="col" style="text-align: center;"></th>
           </tr>
         </thead>
@@ -113,28 +108,25 @@
         </div>
         <div class="modal-body row">
           <div class="col-6 mb-3">
-            <input class="form-control" id="user-id" type="text" placeholder="Mã nhân viên" disabled>
+            <input class="form-control" id="post-id" type="text" placeholder="Mã bài viết" disabled>
           </div>
           <div class="col-6 mb-3">
-            <input class="form-control" id="user-name" type="text" placeholder="Tên đăng nhập">
+            <input class="form-control" id="post-title" type="text" placeholder="Tiêu đề">
           </div>
           <div class="col-6 mb-3">
-            <input class="form-control" id="user-password" type="text" placeholder="Mật khẩu">
+            <input class="form-control" id="post-description" type="text" placeholder="Mô tả">
           </div>
           <div class="col-6 mb-3">
-            <input class="form-control" id="user-email" type="text" placeholder="Email">
+            <input class="form-control" id="post-image" type="text" placeholder="URL ảnh bìa">
           </div>
           <div class="col-6 mb-3">
-            <input class="form-control" id="user-phone" type="text" maxlength="10" placeholder="Số điện thoại">
+            <input class="form-control" id="post-category" type="text" placeholder="Danh mục">
           </div>
           <div class="col-6 mb-3">
-            <input class="form-control" id="user-address" type="text" placeholder="Địa chỉ">
+            <input class="form-control" id="post-content" type="text" placeholder="Nội dung">
           </div>
           <div class="col-6 mb-3">
-            <input class="form-control" id="user-date" type="date" placeholder="Ngày sinh">
-          </div>
-          <div class="col-6 mb-3">
-            <input class="form-control" id="user-permission" type="text" placeholder="Chức vụ">
+            <input class="form-control" id="post-date" type="text" placeholder="Ngày tạo" disabled>
           </div>
         </div>
         <div class="modal-footer">
@@ -145,7 +137,7 @@
     </div>
   </div>
 
-  <script src="../js/administrators.js"></script>
+  <script src="../js/posts.js"></script>
 </body>
 
 </html>

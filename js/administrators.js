@@ -11,8 +11,11 @@ const userDate = document.querySelector('#user-date');
 const userPermission = document.querySelector('#user-permission');
 const modal = document.querySelector('.modal');
 const deleteBtn = document.querySelector('.delete-btn');
+const inputSearch = document.querySelector('#input-search');
+let records = document.querySelector('.records')
 let checked = document.querySelectorAll('.checked');
 let users = [];
+let users_copy = [];
 let user = {};
 let modalHeader = document.querySelector('.modal-title');
 let myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
@@ -22,7 +25,8 @@ window.addEventListener('DOMContentLoaded', () => {
   getUsersData()
     .then(res => {
       users = res;
-      bindUsersToTable(users)
+      users_copy = users;
+      bindUsersToTable(users_copy)
       // console.log("users", users);
     })
 
@@ -154,6 +158,7 @@ function bindUsersToTable(users) {
     `
   }).join('')
   tableBody.innerHTML = data;
+  records.innerHTML = users_copy.length;
   checked = document.querySelectorAll('.checked');
 }
 
@@ -209,8 +214,8 @@ function saveData() {
   getUsersData()
     .then(res => {
       users = res;
-      bindUsersToTable(users)
-      // console.log("users", users);
+      users_copy = users;
+      bindUsersToTable(users_copy)
     })
 }
 
@@ -222,7 +227,6 @@ function checkExistedUSerName() {
   } else {
     return true;
   }
-  
 }
 
 function checkItem(id, i) {
@@ -240,10 +244,23 @@ function checkItem(id, i) {
 
 function removeUser() {
   deleteUser(selectedAcc);
+  selectedAcc = '';
   getUsersData()
     .then(res => {
       users = res;
-      bindUsersToTable(users)
+      users_copy = users;
+      bindUsersToTable(users_copy)
       // console.log("users", users);
     })
+}
+
+function searchUser() {
+  let result = inputSearch.value.trim().toString();
+  if (result) {
+    users_copy = users.filter(ele => ele.taiKhoan.includes(result));
+    bindUsersToTable(users_copy)
+  } else {
+    users_copy = users;
+    bindUsersToTable(users_copy)
+  }
 }
