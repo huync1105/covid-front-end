@@ -8,7 +8,7 @@ const userEmail = document.querySelector('#user-email');
 const userPhone = document.querySelector('#user-phone');
 const userAddress = document.querySelector('#user-address');
 const userDate = document.querySelector('#user-date');
-const userPermission = document.querySelector('#user-permission');
+const userPermission = document.querySelector('.form-select');
 const modal = document.querySelector('.modal');
 const deleteBtn = document.querySelector('.delete-btn');
 const inputSearch = document.querySelector('#input-search');
@@ -20,6 +20,20 @@ let user = {};
 let modalHeader = document.querySelector('.modal-title');
 let myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
 let selectedAcc = '';
+let permissionList = [
+  {
+    id: 'PER01',
+    ten: 'Tổng biên tập'
+  },
+  {
+    id: 'PER02',
+    ten: 'Biên tập viên'
+  },
+  {
+    id: 'PER03',
+    ten: 'Thành viên'
+  },
+];
 
 window.addEventListener('DOMContentLoaded', () => {
   getUsersData()
@@ -33,6 +47,8 @@ window.addEventListener('DOMContentLoaded', () => {
   getUserData()
     .then(res => {
       user = res;
+      console.log(res);
+      localStorage.setItem('currentUserObj', JSON.stringify(user));
       // console.log("user", user);
       navBarDropDown.innerHTML = user.taiKhoan;
     })
@@ -162,7 +178,17 @@ function bindUsersToTable(users) {
   checked = document.querySelectorAll('.checked');
 }
 
+function bindDropDown() {
+  let data = permissionList.map(ele => {
+    return `
+    <option value="${ele.id}">${ele.ten}</option>
+    `
+  })
+  userPermission.innerHTML = data;
+}
+
 function openModal(id) {
+  bindDropDown();
   if(id) {
     let selectedUser = users.find(ele => ele._id === id);
     modalHeader.innerHTML = 'Cập nhật tài khoản';
@@ -183,7 +209,7 @@ function openModal(id) {
     userPhone.value = '';
     userAddress.value = '';
     userDate.value = '';
-    userPermission.value = '';
+    // userPermission.value = '';
   }
   myModal.show()
 }

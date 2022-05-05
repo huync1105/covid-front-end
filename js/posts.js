@@ -1,3 +1,4 @@
+const navbarDropdown = document.querySelector('#navbarDropdown');
 const deleteBtn = document.querySelector('.delete-btn');
 const tableBody = document.querySelector('.table-body');
 const postId = document.querySelector('#post-id');
@@ -7,7 +8,9 @@ const postImage = document.querySelector('#post-image');
 const postCategory = document.querySelector('#post-category');
 const postContent = document.querySelector('#post-content');
 const postDate = document.querySelector('#post-date');
+const postAccept = document.querySelector('#post-accepted');
 const inputSearch = document.querySelector('#input-search');
+const formSelect = document.querySelector('.form-select');
 let records = document.querySelector('.records')
 let checked = document.querySelectorAll('.checked');
 let posts = [];
@@ -15,8 +18,10 @@ let posts_copy = [];
 let modalHeader = document.querySelector('.modal-title');
 let myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
 let selectedPosts = '';
+let categoryList = [];
 
 window.addEventListener('DOMContentLoaded', () => {
+  navbarDropdown.innerHTML = JSON.parse(localStorage.currentUserObj).taiKhoan
   getPostsData()
     .then(res => {
       posts = res;
@@ -24,8 +29,11 @@ window.addEventListener('DOMContentLoaded', () => {
       bindPostsToTable(posts_copy)
       // console.log("posts", posts);
     })
-
   deleteBtn.disabled = !(selectedPosts);
+  getCategoryList()
+    .then(res => {
+      categoryList = res;
+    })
 })
 
 // get posts
@@ -44,6 +52,25 @@ async function getPostsData() {
     body: JSON.stringify()
   }
   const response = await fetch(postAPI, request);
+  return response.json();
+}
+
+// get category list
+async function getCategoryList() {
+  let API = 'http://localhost:3000/subcategories';
+  let request = {
+    method: 'GET',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify()
+  }
+  const response = await fetch(API, request);
   return response.json();
 }
 
@@ -72,6 +99,15 @@ function bindPostsToTable(posts) {
   checked = document.querySelectorAll('.checked');
 }
 
+function bindDataDropDown() {
+  let data = categoryList.map(ele => {
+    return `
+      <option value="${ele._id}">${ele.ten}</option>
+    `
+  })
+  formSelect.innerHTML = data;
+}
+
 // add posts
 async function addPost(data) {
   let postAPI = `http://localhost:3000/posts`;
@@ -92,7 +128,7 @@ async function addPost(data) {
 }
 
 // update post
-async function updatepost(data, id) {
+async function updatePost(data, id) {
   let postAPI = `http://localhost:3000/posts/${id}`;
   let request = {
     method: 'PATCH',
@@ -130,15 +166,19 @@ async function deletePost(id) {
 }
 
 function openModal(id) {
+  bindDataDropDown();
   if(id) {
     let selectedPost = posts.find(ele => ele._id === id);
+    console.log(selectedPost);
     modalHeader.innerHTML = 'Cập nhật bài viết';
     postId.value = selectedPost._id;
     postTitle.value = selectedPost.tieuDe;
     postDescription.value = selectedPost.moTa;
     postImage.value = selectedPost.anhBia;
+    formSelect.value = selectedPost.idDanhMuc;
     postContent.value = selectedPost.noiDung;
     postDate.value = selectedPost.ngayTao;
+    postAccept.checked = selectedPost.daDuyet;
   } else {
     modalHeader.innerHTML = 'Thêm mới bài viết';
     postId.value = '';
@@ -147,6 +187,7 @@ function openModal(id) {
     postImage.value = '';
     postContent.value = '';
     postDate.value = new Date().toLocaleDateString();
+    postAccept.checked = false;
   }
   myModal.show()
 }
@@ -157,9 +198,9 @@ function setData() {
     moTa: postDescription.value,
     noiDung: postContent.value,
     anhBia: postImage.value,
-    idDanhMuc: '',
+    idDanhMuc: formSelect.value,
     idNhanVien: '',
-    idTrangThai: '',
+    daDuyet: postAccept.value,
     ngayTao: new Date().toLocaleDateString()
   }
   return data;
