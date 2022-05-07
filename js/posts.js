@@ -19,9 +19,11 @@ let modalHeader = document.querySelector('.modal-title');
 let myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
 let selectedPosts = '';
 let categoryList = [];
+let user;
 
 window.addEventListener('DOMContentLoaded', () => {
-  navbarDropdown.innerHTML = JSON.parse(localStorage.currentUserObj).taiKhoan
+  navbarDropdown.innerHTML = JSON.parse(localStorage.currentUserObj).taiKhoan;
+  checkPermission();
   getPostsData()
     .then(res => {
       posts = res;
@@ -35,6 +37,14 @@ window.addEventListener('DOMContentLoaded', () => {
       categoryList = res;
     })
 })
+
+function checkPermission() {
+  user = JSON.parse(localStorage.currentUserObj);
+  if (user.phanQuyen === 'PER03') {
+    postAccept.style.visibility = 'hidden';
+    document.querySelector('.post-accepted-label').style.visibility = 'hidden';
+  }
+}
 
 // get posts
 async function getPostsData() {
@@ -86,6 +96,9 @@ function bindPostsToTable(posts) {
       <td>${post.tieuDe}</td>
       <td>${post.moTa}</td>
       <td style="text-align: center;">${post.ngayTao}</td>
+      <td style="text-align: center;">
+        ${(post.daDuyet?`<input class="form-check-input post-accepted-table" type="checkbox" checked disabled>`:`<input class="form-check-input post-accepted-table" type="checkbox" disabled>`)}
+      </td>
       <td style="text-align: center;">
         <button class="edit-btn" onclick="openModal('${post._id}')">
           <i class="fas fa-pen"></i>
@@ -169,14 +182,13 @@ function openModal(id) {
   bindDataDropDown();
   if(id) {
     let selectedPost = posts.find(ele => ele._id === id);
-    console.log(selectedPost);
     modalHeader.innerHTML = 'Cập nhật bài viết';
     postId.value = selectedPost._id;
     postTitle.value = selectedPost.tieuDe;
     postDescription.value = selectedPost.moTa;
     postImage.value = selectedPost.anhBia;
     formSelect.value = selectedPost.idDanhMuc;
-    postContent.value = selectedPost.noiDung;
+    quill.setContents(JSON.parse(selectedPost.noiDung));
     postDate.value = selectedPost.ngayTao;
     postAccept.checked = selectedPost.daDuyet;
   } else {
@@ -185,7 +197,7 @@ function openModal(id) {
     postTitle.value = '';
     postDescription.value = '';
     postImage.value = '';
-    postContent.value = '';
+    // postContent.value = '';
     postDate.value = new Date().toLocaleDateString();
     postAccept.checked = false;
   }
@@ -196,11 +208,11 @@ function setData() {
   let data = {
     tieuDe: postTitle.value,
     moTa: postDescription.value,
-    noiDung: postContent.value,
+    noiDung: JSON.stringify(quill.getContents()),
     anhBia: postImage.value,
     idDanhMuc: formSelect.value,
     idNhanVien: '',
-    daDuyet: postAccept.value,
+    daDuyet: postAccept.checked,
     ngayTao: new Date().toLocaleDateString()
   }
   return data;
@@ -215,11 +227,11 @@ function saveData() {
     myModal.hide();
   }
   getPostsData()
-    .then(res => {
-      posts = res;
-      posts_copy = posts;
-      bindPostsToTable(posts_copy)
-    })
+  .then(res => {
+    posts = res;
+    posts_copy = posts;
+    bindPostsToTable(posts_copy)
+  })
 }
 
 function checkItem(id, i) {

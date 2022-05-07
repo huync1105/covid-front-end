@@ -13,345 +13,249 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/f6dec34c7e.js" crossorigin="anonymous"></script>
-
     <title>Thông tin Covid-19</title>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
 
 
-<!-- TOP NAV -->
+    <!-- TOP NAV -->
 
-<div class="top-nav" id="home">
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-auto">
-                <p> <i class='bx bxs-envelope'></i> thongtincovid19@gmail.com</p>
-                <p> <i class='bx bxs-phone-call'></i> 1900 9095</p>
-            </div>
-            <div class="col-auto social-icons">
-                <a href="#"><i class='bx bxl-facebook'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
-                <a href="#"><i class='bx bxl-instagram'></i></a>
-                <a href="#"><i class='bx bxl-pinterest'></i></a>
+    <div class="top-nav" id="home">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-auto">
+                    <p> <i class='bx bxs-envelope'></i> thongtincovid19@gmail.com</p>
+                    <p> <i class='bx bxs-phone-call'></i> 1900 9095</p>
+                </div>
+                <div class="col-auto social-icons">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-pinterest'></i></a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- BOTTOM NAV -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">COVID-19<span class="dot">.</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+    <!-- BOTTOM NAV -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">COVID-19<span class="dot">.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Thông tin Covid-19</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog2">Các Biến Thể Của Vi-rút</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog3">Vắc-xin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog4">Nếu Quí Vị Mắc Bệnh</a>
+                    </li>
+                </ul>
+
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Tìm
+                    kiếm</button>
+
+                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-brand ms-lg-3">Thắc
+                    mắc</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SLIDER -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" style="height: 90vh">
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#home">Thông tin Covid-19</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#blog2">Các Biến Thể Của Vi-rút</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#blog3">Vắc-xin</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#blog4">Nếu Quí Vị Mắc Bệnh</a>
-                </li>
-            </ul>
-
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Tìm kiếm</button>
-
-            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-brand ms-lg-3">Thắc mắc</a>
-        </div>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-</nav>
 
-<!-- SLIDER -->
-<div class="owl-carousel owl-theme hero-slider">
-    <div class="slide slide1">
+    <div class="post-container">
+
+    </div>
+
+
+    <!-- Nếu Quí Vị Mắc Bệnh -->
+    <section id="blog4" class="text-center">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center text-white">
-                    <h1 class="display-3 my-4">Thông tin<br/>Covid-19</h1>
-                    <a href="./T01_thong_tin/story01_00.html" class="btn btn-brand">Tìm hiểu</a>
+                <div class="col-12">
+                    <div class="intro">
+                        <h1>Nếu Quí Vị Mắc Bệnh</h1>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="slide slide2">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-10 offset-lg-1 text-white">
-                    <h1 class="display-3 my-4">Vắc-xin phòng <br />Covid-19</h1>
-                    <a href="T03_vac_xin/story03_00.html" class="btn btn-brand">Tìm hiểu</a>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service">
+                        <img src="img/icon/stay-home.png" alt="">
+                        <h5>Ở nhà trừ khi cần được chăm sóc y tế</h5>
+                        <p>Hầu hết mọi người mắc COVID-19 có thể hồi phục tại nhà mà không cần chăm sóc y tế.
+                            Đừng rời khỏi nhà của quý vị, ngoại trừ khi cần sự chăm sóc y tế.</p>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Các Biến Thể Của Vi-rút -->
-<section id="blog2">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="intro">
-                    <h1>Các Biến Thể Của Vi-rút</h1>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service">
+                        <img src="img/icon/test coronavirus.png" alt="">
+                        <h5>Đi xét nghiệm</h5>
+                        <p>Nếu quý vị có các triệu chứng của COVID-19, hãy tiến hành xét nghiệm.
+                            Trong khi chờ kết quả xét nghiệm, hãy giữ khoảng cách với người khác.</p>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="img/variant.png" alt="">
-                    <a href="T02_cac_bien_the/story02_00.html" class="tag">Tìm hiểu</a>
-                    <div class="content">
-                        <small>01 Dec, 2022</small>
-                        <h5>Thông tin về các biến thể</h5>
-                        <p>Vi-rút liên tục biến đổi thông qua đột biến và đôi khi những đột biến này dẫn đến một biến thể mới của vi-rút.
-                            Nếu như một số loại biến thể xuất hiện và biến mất, thì những loại khác tiếp tục hoành hành.</p>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service">
+                        <img src="img/icon/avoid-crowds.png" alt="">
+                        <h5>Tách bản thân khỏi những người khác</h5>
+                        <p>Cố gắng ở trong phòng riêng và tránh xa người khác và thú cưng trong nhà quý vị càng nhiều
+                            càng tốt.
+                            Nếu có thể, quý vị nên sử dụng phòng vệ sinh riêng.</p>
                     </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="img/omicron.png" alt="">
-                    <a href="T02_cac_bien_the/story02_03.html" class="tag">Tìm hiểu</a>
-                    <div class="content">
-                        <small>01 Dec, 2022</small>
-                        <h5>Biến thể Omicron</h5>
-                        <p>Biến thể COVID-19 mới có tên Omicron đã khiến các quan chức y tế toàn cầu lo ngại khi các nhà khoa học chạy đua
-                            để khám phá các đột biến sẽ ảnh hưởng như thế nào đến sự lây truyền và mức độ nghiêm trọng của vi rút.</p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="img/variant2.png" alt="">
-                    <a href="T02_cac_bien_the/story02_06.html" class="tag">Tìm hiểu</a>
-                    <div class="content">
-                        <small>01 Dec, 2022</small>
-                        <h5>Hiểu rõ các biến thể</h5>
-                        <p>Loại vi-rút gây bệnh COVID-19 đang liên tục biến đổi và dự kiến sẽ có các biến thể mới của vi-rút này. Một số biến thể mới hình thành rồi biến mất.
-                            Trong các trường hợp khác, biến thể mới tiếp tục tồn tại.</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Vaccin -->
-<section id="blog3">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="intro">
-                    <h1>Vắc-xin</h1>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="img/vaccin.png" alt="">
-                    <a href="T03_vac_xin/story03_02.html"class="tag">Tìm hiểu</a>
-                    <div class="content">
-                        <small>01 Dec, 2022</small>
-                        <h5>Các loại Vắc-xin phòng Covid-19 đã được cấp phép tại Việt Nam</h5>
-                        <p>Đến thời điểm hiện nay, tại Việt Nam đã có 8 loại vắc-xin phòng COVID-19 được Bộ Y tế cấp phép sử dụng.</p>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service">
+                        <img src="img/icon/fever.png" alt="">
+                        <h5>Theo dõi các triệu chứng của quý vị</h5>
+                        <p>Các triệu chứng của COVID-19 bao gồm sốt, ho hoặc các triệu chứng khác.
+                            Cơ quan y tế địa phương sẽ hướng dẫn cách kiểm tra các triệu chứng của quý vị và báo cáo
+                            thông tin.
+                        </p>
                     </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="img/side effects.png" alt="">
-                    <a href="T03_vac_xin/story03_03.html" class="tag">Tìm hiểu</a>
-                    <div class="content">
-                        <small>01 Dec, 2022</small>
-                        <h5>Các tác dụng phụ có thể xảy ra sau khi tiêm vắc-xin ngừa COVID-19</h5>
-                        <p>Tiêm chủng COVID-19 giúp bảo vệ mọi người khỏi bị bệnh COVID-19. Một số người có thể gặp phải một số tác dụng phụ của vắc-xin.</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service">
+                        <img src="img/icon/phone-call.png" alt="">
+                        <h5>Gọi điện trước khi đến gặp bác sĩ của quý vị</h5>
+                        <p>Hãy gọi điện trước để thông báo cho họ quý vị đã mắc hoặc có thể mắc COVID-19.
+                            Có thể hoãn buổi khám định kỳ qua điện thoại hoặc dịch vụ y tế từ xa.</p>
                     </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="img/does covid safe.png" alt="">
-                    <a href="T03_vac_xin/story03_06.html" class="tag">Tìm hiểu</a>
-                    <div class="content">
-                        <small>01 Dec, 2022</small>
-                        <h5>Các Vắc-xin Covid-19 có an toàn dù được phát triển nhanh chóng không?</h5>
-                        <p>Quý vị có thể có câu hỏi về các tác dụng phụ. Có thể quý vị đã nghe nói rằng vắc-xin có thể ảnh hưởng đến DNA hoặc khả năng sinh con của quý vị.</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service">
+                        <img src="img/icon/mask.png" alt="">
+                        <h5>Nếu quý vị bị bệnh, hãy đeo khẩu trang vừa khớp</h5>
+                        <p>Quý vị nên đeo khẩu trang nếu quý vị phải ở gần bên người khác hoặc động vật,
+                            kể cả vật nuôi trong nhà (dù là tại nhà).</p>
                     </div>
-                </article>
+                </div>
+
+                <div class="d-grid gap-2 col-3 mx-auto"><a class="btn btn-primary" href="T04_neu_mac_benh/story04.html"
+                        role="button">Tìm hiểu</a></div>
+
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Nếu Quí Vị Mắc Bệnh -->
-<section id="blog4" class="text-center">
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <div class="intro">
-                <h1>Nếu Quí Vị Mắc Bệnh</h1>
-            </div>
-        </div>
-    </div>
-<div class="row g-4">
-    <div class="col-lg-4 col-md-6">
-        <div class="service">
-            <img src="img/icon/stay-home.png" alt="">
-            <h5>Ở nhà trừ khi cần được chăm sóc y tế</h5>
-            <p>Hầu hết mọi người mắc COVID-19 có thể hồi phục tại nhà mà không cần chăm sóc y tế.
-                Đừng rời khỏi nhà của quý vị, ngoại trừ khi cần sự chăm sóc y tế.</p>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6">
-        <div class="service">
-            <img src="img/icon/test coronavirus.png" alt="">
-            <h5>Đi xét nghiệm</h5>
-            <p>Nếu quý vị có các triệu chứng của COVID-19, hãy tiến hành xét nghiệm.
-                Trong khi chờ kết quả xét nghiệm, hãy giữ khoảng cách với người khác.</p>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6">
-        <div class="service">
-            <img src="img/icon/avoid-crowds.png" alt="">
-            <h5>Tách bản thân khỏi những người khác</h5>
-            <p>Cố gắng ở trong phòng riêng và tránh xa người khác và thú cưng trong nhà quý vị càng nhiều càng tốt.
-                Nếu có thể, quý vị nên sử dụng phòng vệ sinh riêng.</p>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6">
-        <div class="service">
-            <img src="img/icon/fever.png" alt="">
-            <h5>Theo dõi các triệu chứng của quý vị</h5>
-            <p>Các triệu chứng của COVID-19 bao gồm sốt, ho hoặc các triệu chứng khác.
-                Cơ quan y tế địa phương sẽ hướng dẫn cách kiểm tra các triệu chứng của quý vị và báo cáo thông tin.
-            </p>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6">
-        <div class="service">
-            <img src="img/icon/phone-call.png" alt="">
-            <h5>Gọi điện trước khi đến gặp bác sĩ của quý vị</h5>
-            <p>Hãy gọi điện trước để thông báo cho họ quý vị đã mắc hoặc có thể mắc COVID-19.
-                Có thể hoãn buổi khám định kỳ qua điện thoại hoặc dịch vụ y tế từ xa.</p>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6">
-        <div class="service">
-            <img src="img/icon/mask.png" alt="">
-            <h5>Nếu quý vị bị bệnh, hãy đeo khẩu trang vừa khớp</h5>
-            <p>Quý vị nên đeo khẩu trang nếu quý vị phải ở gần bên người khác hoặc động vật,
-                kể cả vật nuôi trong nhà (dù là tại nhà).</p>
-        </div>
-    </div>
-    
-    <div class="d-grid gap-2 col-3 mx-auto"><a class="btn btn-primary" href="T04_neu_mac_benh/story04.html" role="button">Tìm hiểu</a></div>
-
-    </div>
-</div>
-</section>
-
-<!-- footer -->
-<footer>
-    <div class="footer-top text-center">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 text-center">
-                    <h4 class="navbar-brand">COVID-19<span class="dot">.</span></h4>
-                    <p>Email: thongtincovid19@gmail.com</p>
-                    <p>Hotline: 19009095</p>
-                    <div class="col-auto social-icons">
-                        <a href="#https://www.facebook.com/botruongboyte.vn"><i class='bx bxl-facebook'></i></a>
-                        <a href="#"><i class='bx bxl-twitter'></i></a>
-                        <a href="#"><i class='bx bxl-instagram'></i></a>
-                        <a href="#"><i class='bx bxl-pinterest'></i></a>
+    <!-- footer -->
+    <footer>
+        <div class="footer-top text-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <h4 class="navbar-brand">COVID-19<span class="dot">.</span></h4>
+                        <p>Email: thongtincovid19@gmail.com</p>
+                        <p>Hotline: 19009095</p>
+                        <div class="col-auto social-icons">
+                            <a href="#https://www.facebook.com/botruongboyte.vn"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram'></i></a>
+                            <a href="#"><i class='bx bxl-pinterest'></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="footer-bottom text-center">
-        <p class="mb-0">Copyright@2022. For study purposes only</p>
-    </div>
-</footer>
-
-<!-- The Modal -->
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="search-box">
-            <input class="search-txt" type="text" placeholder="Tìm kiếm">
-            <a class="search-btn"href="#">
-                <i class="fas fa-search"></i>
-            </a>
+        <div class="footer-bottom text-center">
+            <p class="mb-0">Copyright@2022. For study purposes only</p>
         </div>
-      </div>
-    </div>
-  </div>
+    </footer>
 
-<!-- Form -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content">
-            <div class="modal-body p-0">
-                <div class="container-fluid">
-                    <div class="row gy-4">
-                        <div class="col-lg-4 col-sm-12 bg-cover"
-                            style="background-image: url(img/form.png); min-height:300px;">
-                            <div>
-                                
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="search-box">
+                    <input class="search-txt" type="text" placeholder="Tìm kiếm">
+                    <a class="search-btn" href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <div class="container-fluid">
+                        <div class="row gy-4">
+                            <div class="col-lg-4 col-sm-12 bg-cover"
+                                style="background-image: url(img/form.png); min-height:300px;">
+                                <div>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <form class="p-lg-5 col-12 row g-3">
+                                    <div>
+                                        <h1>Giải đáp thắc mắc</h1>
+                                        <p>Nếu quý vị có thắc mắc vấn đề liên quan đến Covid-19 vui lòng điền thông tin
+                                            và câu hỏi dưới đây.</p>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="userName" class="form-label">Tên</label>
+                                        <input type="text" class="form-control" placeholder="Tên" id="userName"
+                                            aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="userName" class="form-label">Họ</label>
+                                        <input type="text" class="form-control" placeholder="Họ" id="userName"
+                                            aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="userName" class="form-label">Địa chỉ Email</label>
+                                        <input type="email" class="form-control" placeholder="Địa chỉ Email"
+                                            id="userName" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="exampleInputEmail1" class="form-label">Câu hỏi</label>
+                                        <textarea name="" placeholder="Câu hỏi" class="form-control" id=""
+                                            rows="4"></textarea>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-brand">Gửi</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <div class="col-lg-8">
-                            <form class="p-lg-5 col-12 row g-3">
-                                <div>
-                                    <h1>Giải đáp thắc mắc</h1>
-                                <p>Nếu quý vị có thắc mắc vấn đề liên quan đến Covid-19 vui lòng điền thông tin và câu hỏi dưới đây.</p>
-                                </div>
-                                <div class="col-lg-6">
-                                    <label for="userName" class="form-label">Tên</label>
-                                    <input type="text" class="form-control" placeholder="Tên" id="userName"
-                                        aria-describedby="emailHelp">
-                                </div>
-                                <div class="col-lg-6">
-                                    <label for="userName" class="form-label">Họ</label>
-                                    <input type="text" class="form-control" placeholder="Họ" id="userName"
-                                        aria-describedby="emailHelp">
-                                </div>
-                                <div class="col-12">
-                                    <label for="userName" class="form-label">Địa chỉ Email</label>
-                                    <input type="email" class="form-control" placeholder="Địa chỉ Email" id="userName"
-                                        aria-describedby="emailHelp">
-                                </div>
-                                <div class="col-12">
-                                    <label for="exampleInputEmail1" class="form-label">Câu hỏi</label>
-                                    <textarea name="" placeholder="Câu hỏi" class="form-control" id=""  rows="4"></textarea>
-                                </div>
-
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-brand">Gửi</button>
-                                </div>
-                            </form>
-                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Slide2 -->
-<!-- <section class="bg-light" id="portfolio">
+    <!-- Slide2 -->
+    <!-- <section class="bg-light" id="portfolio">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -408,8 +312,8 @@
     </div>
 </section> -->
 
-<!-- Sample -->
-<!-- <section id="blog">
+    <!-- Sample -->
+    <!-- <section id="blog">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -463,14 +367,11 @@
 </section> -->
 
 
-
-
-
-
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/app.js"></script>
+    <script src='./js/index.js'></script>
 </body>
 
 </html>
