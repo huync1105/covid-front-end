@@ -66,3 +66,11 @@ function joinPosts() {
     })
   })
 }
+
+function renderAccordion() {
+  let data = subCategories.map(ele => {
+    return `
+      
+    `
+  })
+}
