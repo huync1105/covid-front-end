@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function checkPermission() {
   user = JSON.parse(localStorage.currentUserObj);
-  if (user.phanQuyen === 'PER03') {
+  if (user.phanQuyen !== 'PER01') {
     postAccept.style.visibility = 'hidden';
     document.querySelector('.post-accepted-label').style.visibility = 'hidden';
   }
@@ -200,6 +200,7 @@ function openModal(id) {
     // postContent.value = '';
     postDate.value = new Date().toLocaleDateString();
     postAccept.checked = false;
+    quill.root.innerHTML = '';
   }
   myModal.show()
 }
@@ -209,12 +210,14 @@ function setData() {
     tieuDe: postTitle.value,
     moTa: postDescription.value,
     noiDung: JSON.stringify(quill.getContents()),
+    noiDungHTML: quill.root.innerHTML,
     anhBia: postImage.value,
     idDanhMuc: formSelect.value,
     idNhanVien: '',
     daDuyet: postAccept.checked,
     ngayTao: new Date().toLocaleDateString()
   }
+  console.log("data", data);
   return data;
 }
 

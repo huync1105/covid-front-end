@@ -188,6 +188,15 @@ function bindDropDown() {
 }
 
 function openModal(id) {
+  if (user.phanQuyen !== 'PER01') {
+    userName.disabled = true;
+    userEmail.disabled = true;
+    userPhone.disabled = true;
+    userAddress.disabled = true;
+    userDate.disabled = true;
+    userPermission.disabled = true;
+    userPassword.disabled = true;
+  }
   bindDropDown();
   if(id) {
     let selectedUser = users.find(ele => ele._id === id);
