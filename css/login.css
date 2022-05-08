@@ -1,12 +1,21 @@
 #wrapper {
   width: 100%;
   height: 100vh;
+  background-image: url('../img/Login_bg.jpg');
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: cover;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+  background-size: cover;
 }
 
-.form-container {
+/* .form-container {
   width: 30%;
   min-width: 400px;
-}
+} */
 
 .login {
   width: 100%;

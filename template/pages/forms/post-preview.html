@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Xem trước bài viết</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="../../assets/vendors/select2/select2.min.css">
+  <link rel="stylesheet" href="../../assets/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+  <!-- End plugin css for this page -->
+
+  <!-- Clock card -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- CCEnd -->
+
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- End layout styles -->
+  <link rel="shortcut icon" href="../../assets/images/web-logo.png" />
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:../../partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+        <a class="sidebar-brand brand-logo" href="../../index.html"><img src="../../assets/images/logo-Admin.svg"
+            alt="logo" /></a>
+        <a class="sidebar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini-a.svg"
+            alt="logo" /></a>
+      </div>
+      <ul class="nav">
+        <li class="nav-item profile">
+          <div class="profile-desc">
+            <div class="profile-pic">
+              <div class="count-indicator">
+                <img class="img-xs rounded-circle " src="../../assets/images/faces/face25.jpg" alt="">
+              </div>
+              <div class="profile-name">
+                <h5 class="mb-0 font-weight-normal">Lê Hoàng Sơn</h5>
+                <span>Tổng biên tập</span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Tác vụ</span>
+        </li>
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="../../index.html">
+            <span class="menu-icon">
+              <i class="mdi mdi-speedometer"></i>
+            </span>
+            <span class="menu-title">Bài viết</span>
+          </a>
+        </li>
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="../user/User.html">
+            <span class="menu-icon">
+              <i class="mdi mdi-account"></i>
+            </span>
+            <span class="menu-title">Thành viên</span>
+          </a>
+        </li>
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="../category/category.html">
+            <span class="menu-icon">
+              <i class="mdi mdi-table-large"></i>
+            </span>
+            <span class="menu-title">Danh mục</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav class="navbar p-0 fixed-top d-flex flex-row">
+        <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini-a.svg"
+              alt="logo" /></a>
+        </div>
+        <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-menu"></span>
+          </button>
+
+          <!-- Clock -->
+          <ul class="navbar-nav col-md-6">
+            <li class="nav-item text-white clock-num">
+              <h3 class="card-title text-center clock-text">
+                <div class="mt-2 d-flex flex-wrap justify-content-center">
+                  <a><span class="badge hours"></span></a> :
+                  <a><span class="badge min"></span></a> :
+                  <a><span class="badge sec"></span></a>
+                </div>
+              </h3>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item dropdown d-none d-lg-block">
+              <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-toggle="dropdown"
+                aria-expanded="false" href="#">+ Create New Project</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
+                <div class="navbar-profile">
+                  <img class="img-xs rounded-circle" src="../../assets/images/faces/face25.jpg" alt="">
+                  <p class="mb-0 d-none d-sm-block navbar-profile-name">Lê Hoàng Sơn</p>
+                  <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+                </div>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                aria-labelledby="profileDropdown">
+                <h6 class="p-3 mb-0">Trang cá nhân</h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-dark rounded-circle">
+                      <i class="mdi mdi-settings text-success"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <p class="preview-subject mb-1">Cài đặt</p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-dark rounded-circle">
+                      <i class="mdi mdi-logout text-danger"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <p class="preview-subject mb-1">Đăng xuất</p>
+                  </div>
+                </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="card">
+            <div class="card-body">
+
+              <!-- <div class="container mt-5"> -->
+              <div class="row">
+                <div class="col-lg-6">
+                  <!-- Post content-->
+                  <article>
+
+                    <!-- Post header-->
+                    <header class="mb-4">
+                      <!-- Post title-->
+                      <h1 class="fw-bolder mb-1">Thông tin covid
+                      </h1>
+                      <!-- Post meta content-->
+                      <div class="text-muted fst-italic mb-2"> January 1, 2022 </div>
+                      <!-- Post categories-->
+                    </header>
+
+                    <!-- Preview image figure-->
+                    <figure class="mb-4"><img class="img-fluid rounded"
+                        src="https://wallpaperaccess.com/full/2029165.jpg" alt="..." /></figure>
+
+                    <!-- Post content-->
+                    <section class="mb-5">
+                      <p class="fs-5 mb-4">Science is an enterprise that should be cherished as an activity of the free
+                        human mind. Because it transforms who we are, how we live, and it gives us an understanding of
+                        our place in the universe.</p>
+                      <p class="fs-5 mb-4">The universe is large and old, and the ingredients for life as we know it are
+                        everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of
+                        not the life became intelligent is a different question, and we'll see if we find that.</p>
+                      <p class="fs-5 mb-4">If you get asteroids about a kilometer in size, those are large enough and
+                        carry enough energy into our system to disrupt transportation, communication, the food chains,
+                        and that can be a really bad day on Earth.</p>
+                      <h2 class="fw-bolder mb-4 mt-5">I have odd cosmic thoughts every day</h2>
+                      <p class="fs-5 mb-4">For me, the most fascinating interface is Twitter. I have odd cosmic thoughts
+                        every day and I realized I could hold them to myself or share them with people who might be
+                        interested.</p>
+                      <p class="fs-5 mb-4">Venus has a runaway greenhouse effect. I kind of want to know what happened
+                        there because we're twirling knobs here on Earth without knowing the consequences of it. Mars
+                        once had running water. It's bone dry today. Something bad happened there as well.</p>
+                    </section>
+                  </article>
+                </div>
+
+                <!-- Side widgets-->
+                <div class="col-lg-6 side-col">
+                  <div class="card mb-4">
+                    <div class="pro-button col-12">
+                      <form class="row g-3">
+                        <div class="pro-button col-md-12">
+                          <label for="exampleSelectCategories">Danh mục</label>
+                          <select class="form-control" id="exampleSelectCategories">
+                            <option>Được duyệt</option>
+                            <option>Chờ duyệt</option>
+                            <option>Không duyệt</option>
+                          </select>
+                        </div>
+                        <div class="pro-button col-12">
+                          <label for="exampleTextarea1">Nhận xét</label>
+                          <textarea spellcheck="false" class="form-control" id="exampleTextarea1" rows="4"> </textarea>
+                        </div>
+
+                        <div class="col-2 submit-button pro-button">
+                          <button type="submit" class="btn btn-primary">Gửi</button>
+                        </div>
+
+                      </form>
+
+                      <div class="card-body card-comments">
+                        <div class="d-flex mb-4">
+                          <!-- Parent comment-->
+                          <div class="flex-shrink-0"><img class="rounded-circle"
+                              src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                          <div class="ms-3">
+                            <div class="fw-bold">Commenter Name</div>
+                            If you're going to lead a space frontier, it has to be government; it'll never be private
+                            enterprise. Because the space frontier is dangerous, and it's expensive, and it has
+                            unquantified risks.
+                          </div>
+                        </div>
+                        <!-- Single comment-->
+                        <div class="d-flex">
+                          <div class="flex-shrink-0"><img class="rounded-circle"
+                              src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                          <div class="ms-3">
+                            <div class="fw-bold">Commenter Name</div>
+                            When I look at the universe and all the ways the universe wants to kill us, I find it hard
+                            to reconcile that with statements of beneficence.
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- plugins:js -->
+  <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+  <script src="../../assets/js/misc.js"></script>
+  <script src="../../assets/js/file-upload.js"></script>
+  <script src="../../assets/js/textarea.js"></script>
+  <script src="../../assets/js/clock.js"></script>
+  <!-- End custom js for this page -->
+</body>
+
+</html>

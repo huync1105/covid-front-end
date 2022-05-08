@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Thêm bài viết</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="../../assets/vendors/select2/select2.min.css">
+  <link rel="stylesheet" href="../../assets/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+  <!-- End plugin css for this page -->
+
+  <!-- Clock card -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- CCEnd -->
+
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- End layout styles -->
+  <link rel="shortcut icon" href="../../assets/images/web-logo.png" />
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:../../partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+        <a class="sidebar-brand brand-logo" href="../../index.html"><img src="../../assets/images/logo-Admin.svg"
+            alt="logo" /></a>
+        <a class="sidebar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini-a.svg"
+            alt="logo" /></a>
+      </div>
+      <ul class="nav">
+        <li class="nav-item profile">
+          <div class="profile-desc">
+            <div class="profile-pic">
+              <div class="count-indicator">
+                <img class="img-xs rounded-circle " src="../../assets/images/faces/face25.jpg" alt="">
+              </div>
+              <div class="profile-name">
+                <h5 class="mb-0 font-weight-normal">Lê Hoàng Sơn</h5>
+                <span>Tổng biên tập</span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Tác vụ</span>
+        </li>
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="../../index.html">
+            <span class="menu-icon">
+              <i class="mdi mdi-speedometer"></i>
+            </span>
+            <span class="menu-title">Bài viết</span>
+          </a>
+        </li>
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="../user/User.html">
+            <span class="menu-icon">
+              <i class="mdi mdi-account"></i>
+            </span>
+            <span class="menu-title">Thành viên</span>
+          </a>
+        </li>
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="../category/category.html">
+            <span class="menu-icon">
+              <i class="mdi mdi-table-large"></i>
+            </span>
+            <span class="menu-title">Danh mục</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav class="navbar p-0 fixed-top d-flex flex-row">
+        <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini-a.svg"
+              alt="logo" /></a>
+        </div>
+        <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-menu"></span>
+          </button>
+
+          <!-- Clock -->
+          <ul class="navbar-nav col-md-6">
+            <li class="nav-item text-white clock-num">
+              <h3 class="card-title text-center clock-text">
+                <div class="mt-2 d-flex flex-wrap justify-content-center">
+                  <a><span class="badge hours"></span></a> :
+                  <a><span class="badge min"></span></a> :
+                  <a><span class="badge sec"></span></a>
+                </div>
+              </h3>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item dropdown">
+              <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
+                <div class="navbar-profile">
+                  <img class="img-xs rounded-circle" src="../../assets/images/faces/face25.jpg" alt="">
+                  <p class="mb-0 d-none d-sm-block navbar-profile-name">Lê Hoàng Sơn</p>
+                  <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+                </div>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                aria-labelledby="profileDropdown">
+                <h6 class="p-3 mb-0">Trang cá nhân</h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item" href="../forms/profile.html">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-dark rounded-circle">
+                      <i class="mdi mdi-settings text-success"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <p class="preview-subject mb-1">Cài đặt</p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item" href="../Login/login.html">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-dark rounded-circle">
+                      <i class="mdi mdi-logout text-danger"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <p class="preview-subject mb-1">Đăng xuất</p>
+                  </div>
+                </a>
+              </div>
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+            data-toggle="offcanvas">
+            <span class="mdi mdi-format-line-spacing"></span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Main -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="card">
+            <div class="card-body">
+              <div class="flex-row justify-content-between">
+
+                <!-- button new post -->
+                <div class="card-title nav-item dropdown d-flex justify-content-between">
+                  <h4> Bài viết mới </h4>
+                  <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown"
+                    href="../forms/post.html">+ Tạo bài viết mới</a>
+                </div>
+
+                <!-- form1 -->
+                <form class="row g-3">
+                  <input type="hidden" id="custId" name="status" value="pending">
+                  <div class="pro-button col-md-6">
+                    <label for="inputTitle" class="form-label">Tiêu đề</label>
+                    <input type="email" class="form-control" id="inputTitle" placeholder="Title">
+                  </div>
+                  <div class="pro-button col-md-6">
+                    <label for="inputDescription" class="form-label">Mô tả</label>
+                    <input type="text" class="form-control" id="inputDescription" placeholder="Description">
+                  </div>
+                  <div class="pro-button col-md-6">
+                    <label for="exampleSelectCategories">Danh mục</label>
+                    <select class="form-control" id="exampleSelectCategories">
+                      <option>Category1</option>
+                      <option>Category2</option>
+                      <option>Category3</option>
+                      <option>Category4</option>
+                    </select>
+                  </div>
+
+                  <div class="pro-button pic-button col-md-6 form-group">
+                    <label for="inputEmail" class="form-label">Ảnh</label>
+                    <input type="file" name="img[]" class="file-upload-default">
+                    <div class="input-group col-xs-12">
+                      <input type="text" class="form-control file-upload-info" disabled placeholder="Tải ảnh lên">
+                      <span class="input-group-append">
+                        <button class="file-upload-browse btn btn-primary" type="button">Tải lên</button>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="pro-button col-12">
+                    <label for="exampleTextarea1">Nội dung</label>
+                    <textarea spellcheck="false" class="form-control" id="exampleTextarea1" rows="4"> </textarea>
+                  </div>
+
+                  <div class="col-1 submit-button pro-button">
+                    <button type="submit" class="btn btn-primary">Gửi</button>
+                  </div>
+                  <div class="pro-button cancel-button col-1">
+                    <button type="button" class="btn btn-danger">Hủy</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- plugins:js -->
+  <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+  <script src="../../assets/js/misc.js"></script>
+  <script src="../../assets/js/file-upload.js"></script>
+  <script src="../../assets/js/textarea.js"></script>
+  <script src="../../assets/js/clock.js"></script>
+  <!-- End custom js for this page -->
+</body>
+
+</html>

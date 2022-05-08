@@ -6,6 +6,7 @@ let users = [];
 
 // get users
 window.addEventListener('DOMContentLoaded', () => {
+  localStorage.clear();
   async function getUserData() {
     let userAPI = 'http://localhost:3000/users';
     let request = {
@@ -53,7 +54,8 @@ function checkUser(user) {
       toast.show();
       let currentUserId = existedUser._id;
       localStorage.setItem('CurrentUser', currentUserId);
-      window.location.pathname = '/Administrator/administrators.html'
+      // window.location.pathname = '/Administrator/administrators.html'
+      window.location.pathname = '/template/index.html'
     }
   }
 }

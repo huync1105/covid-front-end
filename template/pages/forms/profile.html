@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Trang cá nhân</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- End Plugin css for this page -->
+
+    <!-- inject:css -->
+    <!-- endinject -->
+
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="../../assets/images/web-logo.png" />
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+          <a class="sidebar-brand brand-logo" href="index.html"><img src="../../assets/images/logo-Admin.svg" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="../../assets/images/logo-mini-a.svg" alt="logo" /></a>
+        </div>
+        <ul class="nav">
+          <li class="nav-item profile">
+            <div class="profile-desc">
+              <div class="profile-pic">
+                <div class="count-indicator">
+                  <img class="img-xs rounded-circle " src="../../assets/images/faces/face25.jpg" alt="">
+                  <span class="count bg-success"></span>
+                </div>
+                <div class="profile-name">
+                  <h5 class="mb-0 font-weight-normal">Lê Hoàng Sơn</h5>
+                  <span>Tổng biên tập</span>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Task -->
+          <li class="nav-item nav-category">
+            <span class="nav-link">Task</span>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="../../index.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Bài viết</span>
+            </a>
+          </li>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="../user/User.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-account"></i>
+              </span>
+              <span class="menu-title">Thành viên</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="../category/category.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-table-large"></i>
+              </span>
+              <span class="menu-title">Danh mục</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_navbar.html -->
+        <nav class="navbar p-0 fixed-top d-flex flex-row">
+          <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
+            <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini-a.svg" alt="logo" /></a>
+          </div>
+          <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+              <span class="mdi mdi-menu"></span>
+            </button>
+
+            <ul class="navbar-nav col-md-6">
+              <li class="nav-item text-white clock-num">
+                <h3 class="card-title text-center clock-text">
+                  <div class="mt-2 d-flex flex-wrap justify-content-center">
+                  <a><span class="badge hours"></span></a> :
+                  <a><span class="badge min"></span></a> :
+                  <a><span class="badge sec"></span></a>
+                  </div>
+                </h3>
+              </li>
+            </ul>
+
+            <ul class="navbar-nav navbar-nav-right">
+              <li class="nav-item dropdown">
+                <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
+                  <div class="navbar-profile">
+                    <img class="img-xs rounded-circle" src="../../assets/images/faces/face25.jpg" alt="">
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Lê Hoàng Sơn</p>
+                    <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+                  </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
+                  <h6 class="p-3 mb-0">Trang cá nhân</h6>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item" href="profile.html">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-settings text-success"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject mb-1">Cài đặt</p>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item" href="../Login/login.html">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-logout text-danger"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject mb-1">Đăng xuất</p>
+                    </div>
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+              <span class="mdi mdi-format-line-spacing"></span>
+            </button>
+          </div>
+        </nav>
+
+ <!-- partial -->
+<div class="main-panel">
+  <div class="content-wrapper">
+
+  <div class="row">
+    <div class="col-md-3 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+              <h4 class="card-title mb-1">Ảnh cá nhân</h4>
+            </div>
+            <div class="text-center img-upload">
+                <!-- Profile picture image-->
+                <img class="img-fluid rounded-circle mb-1" src="../../assets/images/faces/face25.jpg" alt="..." style="max-width: 115px; max-height: 150px">
+                
+                <!-- Profile picture upload button-->
+                <div class="img-button">
+                  <form action="">
+                    <div class="pro-button pic-button mb-3 form-group">
+                      <label for="inputEmail" class="form-label"> Ảnh </label>
+                      <input type="file" name="img[]" class="file-upload-default">
+                      <div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Tải ảnh lên">
+                        <span class="input-group-append">
+                          <button class="file-upload-browse btn btn-primary" type="button">Tải lên</button>
+                        </span>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-9 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <div class="flex-row justify-content-between">
+            <h4 class="card-title mb-1">Thông tin</h4>
+
+            <!-- form1 -->
+            <form class="row g-3">
+              <div class="pro-button col-md-6">
+                <label for="inputFirstName4" class="form-label">Tên đăng nhập</label>
+                <input type="text" class="form-control" id="user-name" placeholder="Tên đăng nhập">
+              </div>
+              <div class="pro-button col-md-6">
+                <label for="inputLastName4" class="form-label">Mật khẩu</label>
+                <input type="text" class="form-control" id="user-password" placeholder="Mật khẩu">
+              </div>
+              <div class="pro-button col-md-6">
+                <label for="inputEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="user-email" placeholder="Email">
+              </div>
+              <div class="pro-button col-md-6">
+                <label for="inputPhoneNumber" class="form-label">Số điện thoại</label>
+                <input type="text" class="form-control" id="user-phone" placeholder="Số điện thoại" maxlength="10">
+              </div>
+              <div class="pro-button col-md-6">
+                <label for="inputPhoneNumber" class="form-label">Chức vụ</label>
+                <select class="form-control" id="form-select" aria-label="Default select example">
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="pro-button col-md-6">
+                <label for="inputDateofBirth" class="form-label">Ngày sinh</label>
+                <div class="col-md-6">
+                </div>
+                <input type="date" class="form-control" id="user-date" placeholder="Ngày sinh">
+              </div>
+              <div class="pro-button col-12">
+                <label for="inputAddress" class="form-label">Địa chỉ</label>
+                <input type="text" class="form-control" id="user-address" placeholder="Địa chỉ">
+              </div>
+              <div class="col-12 pro-button">
+                <button onclick="saveUser()" class="btn btn-primary">Lưu</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <!-- content-wrapper ends -->
+  <!-- partial -->
+</div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+
+    <!-- plugins:js -->
+    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../assets/js/misc.js"></script>
+    <script src="../../assets/js/file-upload.js"></script>
+    <script src="../../assets/js/clock.js"></script>
+    <!-- End custom js for this page -->
+    <script src="../../assets/js/profile.js"></script>
+  </body>
+</html>
