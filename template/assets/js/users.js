@@ -32,27 +32,7 @@ window.addEventListener('DOMContentLoaded', () => {
       // console.log("users", users);
     })
 
-  getUserData(currentId)
-    .then(res => {
-      user = res;
-      // console.log("user", user);
-      localStorage.setItem('currentUserObj', JSON.stringify(user));
-      document.querySelector('.profile-pic').innerHTML = `
-        <div class="count-indicator">
-          <img class="img-xs rounded-circle " src="../../assets/images/faces/face25.jpg" alt="">
-        </div>
-        <div class="profile-name">
-          <h5 class="mb-0 font-weight-normal">${user.taiKhoan}</h5>
-          <span>${getPermission(user.phanQuyen)}</span>
-        </div>
-      `
-      document.querySelector('.navbar-profile').innerHTML = `
-        <img class="img-xs rounded-circle" src="../../assets/images/faces/face25.jpg" alt="">
-        <p class="mb-0 d-none d-sm-block navbar-profile-name">${user.taiKhoan}</p>
-        <i class="mdi mdi-menu-down d-none d-sm-block"></i>
-      `
-      getBtnPermission(user.phanQuyen);
-    })
+  getUserData()
 })
 
 // get users
@@ -75,22 +55,24 @@ async function getUsersData() {
 }
 
 // get user by id
-async function getUserData(id) {
-  let userAPI = `http://localhost:3000/users/${id}`;
-  let request = {
-    method: 'GET',
-    mode: 'cors',
-    cache: 'no-cache',
-    credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    redirect: 'follow',
-    referrerPolicy: 'no-referrer',
-    body: JSON.stringify()
-  }
-  const response = await fetch(userAPI, request);
-  return response.json();
+function getUserData() {
+  user = JSON.parse(localStorage.currentUserObj);
+  console.log("user", user);
+  document.querySelector('.profile-pic').innerHTML = `
+    <div class="count-indicator">
+      <img class="img-xs rounded-circle " src="../../assets/images/faces/face25.jpg" alt="">
+    </div>
+    <div class="profile-name">
+      <h5 class="mb-0 font-weight-normal">${user.taiKhoan}</h5>
+      <span>${getPermission(user.phanQuyen)}</span>
+    </div>
+  `
+  document.querySelector('.navbar-profile').innerHTML = `
+    <img class="img-xs rounded-circle" src="../../assets/images/faces/face25.jpg" alt="">
+    <p class="mb-0 d-none d-sm-block navbar-profile-name">${user.taiKhoan}</p>
+    <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+  `
+  getBtnPermission(user.phanQuyen);
 }
 
 // add users

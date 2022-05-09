@@ -272,3 +272,4 @@ function searchPost() {
     bindPostsToTable(posts_copy)
   }
 }
+

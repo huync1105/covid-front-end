@@ -12,6 +12,21 @@ function loadData() {
   .then(res => {
     currentUser = res;
     // console.log("currentUser", currentUser);
+    localStorage.setItem('currentUserObj', JSON.stringify(currentUser));
+    document.querySelector('.profile-pic').innerHTML = `
+      <div class="count-indicator">
+        <img class="img-xs rounded-circle " src="assets/images/faces/face25.jpg" alt="">
+      </div>
+      <div class="profile-name">
+        <h5 class="mb-0 font-weight-normal">${currentUser.taiKhoan}</h5>
+        <span>${getUserPermissionName(currentUser.phanQuyen)}</span>
+      </div>
+    `
+    document.querySelector('.navbar-profile').innerHTML = `
+      <img class="img-xs rounded-circle" src="assets/images/faces/face25.jpg" alt="">
+      <p class="mb-0 d-none d-sm-block navbar-profile-name">${currentUser.taiKhoan}</p>
+      <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+    `
   })
   getUsersData()
   .then(res => {
@@ -120,11 +135,10 @@ function mergeData(users, posts) {
       }
     })
   })
-  console.log(posts);
+  // console.log(posts);
 }
 
 function bindDataToTable() {
-  console.log(posts);
   let data = posts.map(post => {
     return `
     <tr>
@@ -152,7 +166,7 @@ function bindDataToTable() {
             </div>
           </a>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item preview-item" id="test-dropdown">
+          <a href="../template/pages/forms/post.html" class="dropdown-item preview-item" id="test-dropdown" onclick="createPost('${post._id}')">
             <div class="preview-thumbnail">
               <div class="preview-icon">
                 <i class="mdi mdi-border-color text-info"></i>
@@ -185,4 +199,8 @@ function getUserPermissionName(permission) {
   if (permission === 'PER01') return 'Tổng biên tập'
   if (permission === 'PER02') return 'Biên tập'
   if (permission === 'PER03') return 'Thành viên'
+}
+
+function createPost(id) {
+    localStorage.setItem('postId', id);
 }
