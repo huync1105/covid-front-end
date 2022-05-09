@@ -129,15 +129,39 @@ async function getPostData() {
 }
 
 function renderPostContent() {
-  console.log(post);
+  // console.log(post);
   let category = subCategories.find(obj => obj._id === post.idDanhMuc).ten;
   // console.log(category);
   let data = `
-    <h3 class="mb-4">${category}</h3>
-    <img src="${post.anhBia}" class="img-fluid" alt="${post.anhBia}">
-    <p></p>
+  <h3 class="mb-4">${category}</h3>
+  <img src="${post.anhBia}" class="img-fluid" alt="${post.anhBia}">
+  <div class="mt-3">
+    <button type="button" class="btn btn-primary play" onclick="playSpeech()">
+    <i class="fas fa-play"></i> Phát
+    </button>
+    <button type="button" class="btn btn-danger pause" onclick="pauseSpeech()">
+    <i class="fas fa-pause"></i> Dừng
+    </button>
+  </div>
+  <p></p>
     <h3>${post.tieuDe}</h3>
     ${post.noiDungHTML}
   `
   postContent.innerHTML = data;
+}
+
+
+let synth = window.speechSynthesis;
+let toSpeak = new SpeechSynthesisUtterance(post.noiDungText);
+toSpeak.lang = 'vi-VI';
+
+function playSpeech() {
+  toSpeak.rate = 2
+  synth.speak(toSpeak);
+  console.log(synth);
+}
+
+function pauseSpeech() {
+  synth.pause();
+  console.log(synth);
 }

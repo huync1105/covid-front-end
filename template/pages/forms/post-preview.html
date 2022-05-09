@@ -108,10 +108,10 @@
           </ul>
 
           <ul class="navbar-nav navbar-nav-right">
-            <li class="nav-item dropdown d-none d-lg-block">
+            <!-- <li class="nav-item dropdown d-none d-lg-block">
               <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-toggle="dropdown"
                 aria-expanded="false" href="#">+ Create New Project</a>
-            </li>
+            </li> -->
             <li class="nav-item dropdown">
               <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                 <div class="navbar-profile">
@@ -160,7 +160,7 @@
               <div class="row">
                 <div class="col-lg-6">
                   <!-- Post content-->
-                  <article>
+                  <article class="post-content">
 
                     <!-- Post header-->
                     <header class="mb-4">
@@ -204,12 +204,10 @@
                     <div class="pro-button col-12">
                       <form class="row g-3">
                         <div class="pro-button col-md-12">
-                          <label for="exampleSelectCategories">Danh mục</label>
-                          <select class="form-control" id="exampleSelectCategories">
-                            <option>Được duyệt</option>
-                            <option>Chờ duyệt</option>
-                            <option>Không duyệt</option>
-                          </select>
+                          <label for="exampleSelectCategories">Trạng thái</label>
+                          <div class="status">
+
+                          </div>
                         </div>
                         <div class="pro-button col-12">
                           <label for="exampleTextarea1">Nhận xét</label>
@@ -217,7 +215,7 @@
                         </div>
 
                         <div class="col-2 submit-button pro-button">
-                          <button type="submit" class="btn btn-primary">Gửi</button>
+                          <button type="button" class="btn btn-primary" onclick="test()">Gửi</button>
                         </div>
 
                       </form>
@@ -266,6 +264,7 @@
   <script src="../../assets/js/textarea.js"></script>
   <script src="../../assets/js/clock.js"></script>
   <!-- End custom js for this page -->
+  <script src="../../assets/js/post-preview.js"></script>
 </body>
 
 </html>

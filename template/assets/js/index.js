@@ -155,7 +155,7 @@ function bindDataToTable() {
       <td>
         <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
         <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
-          <a href="#" class="dropdown-item preview-item" id="test-dropdown">
+          <a href="./pages/forms/post-preview.html" class="dropdown-item preview-item" id="test-dropdown" onclick="previewPost('${post._id}')">
             <div class="preview-thumbnail">
               <div class="preview-icon">
                 <i class="mdi mdi-eye text-info"></i>
@@ -202,5 +202,9 @@ function getUserPermissionName(permission) {
 }
 
 function createPost(id) {
-    localStorage.setItem('postId', id);
+  localStorage.setItem('postId', id);
 }
+
+function previewPost(id) {
+  localStorage.setItem('postId', id);
+} 

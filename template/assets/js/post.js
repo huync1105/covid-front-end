@@ -163,6 +163,7 @@ function setData() {
     moTa: postDescription.value,
     noiDung: JSON.stringify(quill.getContents()),
     noiDungHTML: quill.root.innerHTML,
+    noiDungText: quill.getText(),
     anhBia: postImage.value,
     idDanhMuc: postCategory.value,
     idNhanVien: user._id,
@@ -175,7 +176,10 @@ function setData() {
 function saveData() {
   // console.log("setData", setData());
   if (localStorage.postId) {
-    updatePost(setData(), postId.value);
+    updatePost(setData(), localStorage.postId)
+    .then(res => {
+      alert(`Lưu bài viết thành công!`)
+    })
   } else {
     addPost(setData())
     .then(res => {
