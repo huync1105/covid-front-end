@@ -27,7 +27,6 @@
                 <div class="col-auto">
                     <p> <i class='bx bxs-envelope'></i> thongtincovid19@gmail.com</p>
                     <p> <i class='bx bxs-phone-call'></i> 1900 9095</p>
-                    <a href="./Login/login.html" style="color: white">Đăng nhập</a>
                 </div>
                 <div class="col-auto social-icons">
                     <a href="#"><i class='bx bxl-facebook'></i></a>
@@ -40,7 +39,7 @@
     </div>
 
     <!-- BOTTOM NAV -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top col">
         <div class="container">
             <a class="navbar-brand" href="index.html">COVID-19<span class="dot">.</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -52,14 +51,44 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#home">Thông tin Covid-19</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Danh mục
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#blog4">Nếu Quí Vị Mắc Bệnh</a>
                     </li>
                 </ul>
 
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Tìm
-                    kiếm</button>
+                <!-- search box -->
+                <nav class="navbar navbar-light bg-light">
+                    <div class="container-fluid">
+                    <form class="d-flex">
+                        <input class="form-control me-2" id="search-post" type="search" placeholder="Tìm kiếm bài viết" aria-label="Search">
+                    </form>
+                    </div>
+                </nav>
 
+                <div class="search-result">
+                    <div class="container p-2 d-flex search-container">
+                        <img class="img-thumbnail me-3" src="https://znews-photo.zingcdn.me/w660/Uploaded/pwivovlb/2022_05_07/cmnd.jpg" alt="https://znews-photo.zingcdn.me/w660/Uploaded/pwivovlb/2022_05_07/cmnd.jpg">
+                        <!-- <div class="search-img me-3">
+                        </div> -->
+                        <div class="search-content">
+                            <h4 class="m-0 t-overflow">Giá trung bình từng cuốn trong bộ sách giáo khoa mới đều tăng</h3>
+                            <p class="m-0 t-overflow"><i>Ba bộ sách giáo khoa mới của năm học 2022-2023 nhận được sự quan tâm của dư luận khi có giá cao gấp 2-4 lần sách giáo khoa hiện hành.</i></p>
+                            <p class="m-0">7/5/2022</p>
+                        </div>
+                    </div>
+                </div>
+                
                 <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-brand ms-lg-3">Thắc
                     mắc</a>
             </div>
@@ -82,8 +111,10 @@
         </button>
     </div>
 
-    <div class="post-container">
+    <div class="post-container row">
+        <div>
 
+        </div>
     </div>
 
 

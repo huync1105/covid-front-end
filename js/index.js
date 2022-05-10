@@ -1,5 +1,8 @@
 const postContainer = document.querySelector('.post-container');
 const heroSlider = document.querySelector('.carousel-inner');
+const searchResult = document.querySelector('.search-result');
+const searchInput = document.querySelector('#search-post');
+const categoryDropDown = document.querySelector('.dropdown-menu');
 let posts = [];
 let subCategories = [];
 let newPosts = [];
@@ -19,6 +22,7 @@ function LoadData() {
     .then(res => {
       subCategories = res;
       joinPosts();
+      renderDropDown(subCategories);
     })
 }
 
@@ -74,7 +78,7 @@ function joinPosts() {
 function renderPosts() {
   let data = subCategories.map(ele => {
     return `
-      <section>
+      <section id="${ele._id}">
         <div class="container">
           <div class="row">
             <div class="col-12">
@@ -87,7 +91,7 @@ function renderPosts() {
             ${ele.listPost.map(post => {
       if (post.daDuyet)
         return `
-              <div class="col-md-4 mb-4">
+              <div class="col-md-4 col-sm-6 mb-4">
                 <article class="blog-post">
                   <div class="post-img">
                     <img src="${post.anhBia}" height="100%" alt="${post.anhBia}">
@@ -135,3 +139,64 @@ function renderSlides(posts) {
   }).join('');
   heroSlider.innerHTML = data;
 }
+
+function renderDropDown(list) {
+  let data = list.map(item => {
+    return `
+      <li><a class="dropdown-item" href="#${item._id}">${item.ten}</a></li>
+    `
+  }).join('')
+  categoryDropDown.innerHTML = data;
+}
+
+searchInput.addEventListener('keyup', () => {
+  let closeBtn = `
+    <div class="search-close" style="position: absolute; top: 20px; right: 20px">
+      <button class="btn" onclick="closeSearch()">
+          <i class="fas fa-times-circle"></i>
+      </button>
+    </div>
+  `
+  if (searchInput.value.trim().toString()) {
+    let postFilter = posts.filter(post => post.tieuDe.toLowerCase().includes(searchInput.value.toLowerCase()));
+    if (postFilter.length) {
+      let data = postFilter.map(post => {
+        return `
+        <div class="container p-2 d-flex search-container" onclick="seeDetail('${post._id}')">
+          <img class="img-thumbnail me-3" src="${post.anhBia}">
+          <div class="search-content">
+              <h4 class="m-0 t-overflow">${post.tieuDe}</h3>
+              <p class="m-0 t-overflow"><i>${post.moTa}</i></p>
+              <p class="m-0">${post.ngayTao}</p>
+          </div>
+        </div>
+        `
+      }).join('')
+      searchResult.innerHTML = data + closeBtn;
+    } else {
+      searchResult.innerHTML = `
+      <div class="container p-2 d-flex search-container justify-content-center">
+        <img class="img-fluid" style="max-width:50%" src="https://cdn.dribbble.com/users/1094048/screenshots/3393640/media/25b931a815bc90e9f5717f892c53834a.png">
+      </div>
+    ` + closeBtn
+    }
+  } else {
+    searchResult.innerHTML = `
+      <div class="container p-2 d-flex search-container justify-content-center">
+        <img class="img-fluid" style="max-width:50%" src="https://cdn.dribbble.com/users/1094048/screenshots/3393640/media/25b931a815bc90e9f5717f892c53834a.png">
+      </div>
+    ` + closeBtnd
+  }
+  searchResult.style.display = 'block';
+})
+
+function seeDetail(id) {
+  console.log(id);
+  localStorage.setItem('postId', id);
+  location.pathname = 'Chi-tiet-bai-viet/post-detail.html'
+}
+
+function closeSearch() {
+  searchResult.style.display = 'none';
+}
+

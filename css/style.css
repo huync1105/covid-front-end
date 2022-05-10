@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap");
 
+
 :root {
   --brand: #2949ff;
   --dark: #092032;
@@ -463,4 +464,45 @@ input.form-control {
 
 .slide-content {
     
+}
+
+.search-result {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  min-height: 100px;
+  background-color: rgb(245, 248, 255);
+  display: none;
+}
+
+.search-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.search-container {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.search-content {
+}
+
+.t-overflow {
+  white-space: nowrap; 
+  width: 80%; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.img-thumbnail {
+  max-width: 10%
 }

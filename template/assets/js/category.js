@@ -68,7 +68,7 @@ function bindDataToTable(categories) {
       <td>
         <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
         <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
-          <a href="#" class="dropdown-item preview-item" id="test-dropdown">
+          <a href="./category-detail.html" class="dropdown-item preview-item" id="test-dropdown" onclick="addNewCategory('${obj._id}')">
             <div class="preview-thumbnail">
               <div class="preview-icon">
                 <i class="mdi mdi-border-color text-info"></i>
@@ -79,7 +79,7 @@ function bindDataToTable(categories) {
             </div>
           </a>
           <div class="dropdown-divider"></div>
-          <button class="dropdown-item preview-item" id="delete-post">
+          <button class="dropdown-item preview-item" id="delete-post" onclick="deleteCategory('${obj._id}')">
             <div class="preview-thumbnail">
               <div class="preview-icon">
                 <i class="mdi mdi-delete text-success"></i>
@@ -95,25 +95,6 @@ function bindDataToTable(categories) {
     `
   }).join('');
   document.querySelector('.category-content').innerHTML = data;
-}
-
-// delete categories
-async function deleteCategories(id) {
-  let userAPI = `http://localhost:3000/subcategories/${id}`;
-  let request = {
-    method: 'DELETE',
-    mode: 'cors',
-    cache: 'no-cache',
-    credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    redirect: 'follow',
-    referrerPolicy: 'no-referrer',
-    body: JSON.stringify()
-  }
-  const response = await fetch(userAPI, request);
-  return response.json();
 }
 
 // create categories
@@ -135,21 +116,35 @@ async function createCategories(data) {
   return response.json();
 }
 
-function renderNewCategory() {
-  let data = `
-    <tr>
-      <td>
-        <input type="text" class="form-control" id="category-name" placeholder="Tên danh mục">
-      </td>
-      <td>
-        <input type="date" class="form-control" id="category-date">
-      </td>
-      <td>
-      <button type="button" class="btn btn-primary mr-2 save-btn" onclick="">Xác nhận</button>
-      <button type="button" class="btn btn-danger close-btn" onclick="loadData()">Hủy</button>
-      </td>
-    </tr>
-  `
-  document.querySelector('.category-content').innerHTML += data;
+// delete categories
+async function deleteCategoryAPI(id) {
+  let API = `http://localhost:3000/subcategories/${id}`;
+  let request = {
+    method: 'DELETE',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify()
+  }
+  const response = await fetch(API, request);
+  return response.json();
 }
 
+function addNewCategory(id) {
+  localStorage.setItem('categoryId', id);
+  location.pathname = 'template/pages/category/category-detail.html';
+}
+
+function deleteCategory(id) {
+  if (confirm('Bạn có muốn xóa danh mục này không?') == true) {
+    deleteCategoryAPI(id)
+    .then(res => {
+    })
+    loadData();
+  }
+}

@@ -198,124 +198,37 @@
         <!-- Main -->
         <div class="main-panel">
           <div class="content-wrapper">
-            <div class="row">
-              <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <!-- button new cate -->
-                    <div
-                      class="card-title nav-item dropdown d-flex justify-content-between"
-                    >
-                      <h4>Danh mục</h4>
-                      <button
-                        class="nav-link btn btn-success create-new-button"
-                        id="createbuttonDropdown"
-                        onclick="addNewCategory('')">
-                        + Thêm danh mục mới
-                      </button>
+            <div class="card">
+              <div class="card-body">
+                <div class="flex-row justify-content-between">
+  
+                  <!-- button new post -->
+                  <!-- <div class="card-title nav-item dropdown d-flex justify-content-between">
+                    <h4> Bài viết mới </h4>
+                    <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown"
+                      href="../forms/post.html">+ Tạo bài viết mới</a>
+                  </div> -->
+  
+                  <!-- form1 -->
+                  <form class="row g-3">
+                    <input type="hidden" id="custId" name="status" value="pending">
+                    <div class="pro-button col-md-6">
+                      <label for="inputTitle" class="form-label">Tên danh mục</label>
+                      <input type="email" class="form-control" id="category-title" placeholder="Title">
                     </div>
-
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th>Tên danh mục</th>
-                            <th>Được tạo lúc</th>
-                            <th></th>
-                          </tr>
-                        </thead>
-                        <tbody class="category-content">
-                          <tr>
-                            <td>
-                              <!-- <img src="assets/images/faces/face1.jpg" alt="image" /> -->
-                              <span class="pl-2">Thông tin covid</span>
-                            </td>
-                            <td>Sơn Hoàng Lê</td>
-                            <td>10pm</td>
-                            <td>
-                              <div class="badge badge-outline-success">
-                                Được duyệt
-                              </div>
-                            </td>
-
-                            <td>
-                              <a
-                                href="#"
-                                id="profile-dropdown"
-                                data-toggle="dropdown"
-                                ><i class="mdi mdi-dots-vertical"></i
-                              ></a>
-                              <div
-                                class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list"
-                                aria-labelledby="profile-dropdown"
-                              >
-                                <a
-                                  href="#"
-                                  class="dropdown-item preview-item"
-                                  id="test-dropdown"
-                                >
-                                  <div class="preview-thumbnail">
-                                    <div class="preview-icon">
-                                      <i class="mdi mdi-eye text-info"></i>
-                                    </div>
-                                  </div>
-                                  <div class="preview-item-content">
-                                    <p
-                                      class="preview-subject ellipsis mb-1 text-small"
-                                    >
-                                      Xem trước
-                                    </p>
-                                  </div>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a
-                                  href="#"
-                                  class="dropdown-item preview-item"
-                                  id="test-dropdown"
-                                >
-                                  <div class="preview-thumbnail">
-                                    <div class="preview-icon">
-                                      <i
-                                        class="mdi mdi-border-color text-info"
-                                      ></i>
-                                    </div>
-                                  </div>
-                                  <div class="preview-item-content">
-                                    <p
-                                      class="preview-subject ellipsis mb-1 text-small"
-                                    >
-                                      Chỉnh sửa
-                                    </p>
-                                  </div>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a
-                                  href="#"
-                                  class="dropdown-item preview-item"
-                                  id="test-dropdown"
-                                >
-                                  <div class="preview-thumbnail">
-                                    <div class="preview-icon">
-                                      <i
-                                        class="mdi mdi-delete text-success"
-                                      ></i>
-                                    </div>
-                                  </div>
-                                  <div class="preview-item-content">
-                                    <p
-                                      class="preview-subject ellipsis mb-1 text-small"
-                                    >
-                                      Xóa
-                                    </p>
-                                  </div>
-                                </a>
-                              </div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                    
+                    <div class="pro-button col-md-6">
+                      <label for="inputEmail" class="form-label">Ngày tạo</label>
+                      <div class="input-group col-xs-12">
+                        <input type="date" class="form-control" id="category-date" placeholder="URl ảnh">
+                      </div>
                     </div>
-                  </div>
+                    <div class="col-1 pt-3 d-flex">
+                      <button type="button" class="btn btn-primary mr-3" onclick="saveData()">Lưu</button>
+                      <button type="button" class="btn btn-danger" onclick="location.pathname='template/pages/category/category.html'">Đóng</button>
+                    </div>
+                  </form>
+  
                 </div>
               </div>
             </div>
@@ -330,6 +243,6 @@
     <script src="../../assets/js/misc.js"></script>
     <script src="../../assets/js/clock.js"></script>
     <!-- End custom js for this page -->
-    <script src="../../assets/js/category.js"></script>
+    <script src="../../assets/js/category-detail.js"></script>
   </body>
 </html>

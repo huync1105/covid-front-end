@@ -88,6 +88,25 @@ async function getPostsData() {
   return response.json();
 }
 
+// delete post
+async function deletePostData(id) {
+  let userAPI = `http://localhost:3000/posts/${id}`;
+  let request = {
+    method: 'DELETE',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify()
+  }
+  const response = await fetch(userAPI, request);
+  return response.json();
+}
+
 // get category list
 async function getCategoryList() {
   let API = 'http://localhost:3000/subcategories';
@@ -177,7 +196,7 @@ function bindDataToTable() {
             </div>
           </a>
           <div class="dropdown-divider"></div>
-          <button class="dropdown-item preview-item" id="delete-post">
+          <button class="dropdown-item preview-item" id="delete-post" onclick="deletePost('${post._id}')">
             <div class="preview-thumbnail">
               <div class="preview-icon">
                 <i class="mdi mdi-delete text-success"></i>
@@ -208,3 +227,15 @@ function createPost(id) {
 function previewPost(id) {
   localStorage.setItem('postId', id);
 } 
+
+function deletePost(id) {
+  let text = "Bạn có muốn xóa bài viết này?";
+  if (confirm(text) == true) {
+    deletePostData(id)
+    .then(res => {
+      alert("Xóa thành công");
+      loadData();
+    })
+    .catch(err => {})
+  }
+}
